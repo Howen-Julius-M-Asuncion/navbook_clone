@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart.';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'appcolors.dart';
 import 'homepage.dart';
@@ -46,8 +46,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      resizeToAvoidBottomInset: false,
       // backgroundColor: CupertinoColors.systemFill.darkColor,
-        child:
+      child:
         Container(
           decoration: BoxDecoration(
             color: AppColors.bgColor,
@@ -118,7 +119,7 @@ class _MyAppState extends State<MyApp> {
               ),
               SizedBox(height: 40,),
               Padding(
-                padding: EdgeInsets.fromLTRB(80, 0, 80, 10),
+                padding: EdgeInsets.fromLTRB(50, 0, 50, 10),
                 child: SizedBox(
                   height: 45,
                   child: CupertinoTextField(
@@ -133,7 +134,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(80, 0, 80, 10),
+                padding: EdgeInsets.fromLTRB(50, 0, 50, 10),
                 child: SizedBox(
                   height: 45,
                   child: CupertinoTextField(
