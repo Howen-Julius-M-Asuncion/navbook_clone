@@ -1,16 +1,22 @@
-# devops_midterm
+# NavBook
 
-A new Flutter project.
+A flutter project requirement for Dev Ops midterms.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project will utilize the following DevOps features:
+-Version Control (Git)
+-CI/CD pipeline with Github Actions
+-Google Playstore Deployment
 
-A few resources to get you started if this is your first Flutter project:
+## TO DO
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Page Layouts
+-[x]Home Page
+-[ ]Profile Page
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Home Tabs
+-[ ]Home Tab
+-[ ]Room Navigation/Searching Tab
+-[ ]Schedule Tab
+-[ ]Notifications Tab
