@@ -12,11 +12,11 @@ This project will utilize the following DevOps features:
 ## TO DO
 
 ### Page Layouts
--[x] Home Page
--[ ] Profile Page
+- [x] Home Page
+- [ ] Profile Page
 
 ### Home Tabs
--[ ] Home Tab
--[ ] Room Navigation/Searching Tab
--[ ] Schedule Tab
--[ ] Notifications Tab
+- [ ] Home Tab
+- [ ] Room Navigation/Searching Tab
+- [ ] Schedule Tab
+- [ ] Notifications Tab
