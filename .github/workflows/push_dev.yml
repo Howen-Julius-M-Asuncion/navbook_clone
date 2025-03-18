@@ -33,4 +33,4 @@ jobs:
       - name: Ensure App Builds
         run:  | 
           flutter build apk --debug
-          flutter run --debug -d all
+          flutter run --debug -d web-javascript
