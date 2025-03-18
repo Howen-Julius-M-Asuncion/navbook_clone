@@ -11,14 +11,16 @@ jobs:
 
     steps:
       - name: Checkout Repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
-      - name: Flutter action
-        uses: subosito/flutter-action@v2.18.0
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
+          flutter-version: "3.29.0"
           channel: stable
-          flutter-version: 3.29.0
-      - run: flutter --version
 
-      - name: Install referenced packages
-        run: flutter --no-color pub get
+      - name: Verify Flutter Installation
+        run: flutter --version
+
+      - name: Install Dependencies
+        run: flutter pub get
