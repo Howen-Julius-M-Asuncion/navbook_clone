@@ -1,11 +1,10 @@
-name: Release to Github
-
 on:
   push:
     branches: [ "master" ]
 
 jobs:
   build:
+    name: Release to Github
     runs-on: ubuntu-latest
 
     steps:

@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: [ "active-development" ]
+
+jobs:
+  build:
+    name: Update Development Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2.18.0
+        with:
+          channel: stable
+          flutter-version: 3.29.0
+
+      - name: Install Dependencies
+        run: |
+          flutter clean
+          flutter pub get
+
+      - name: Lint Code
+        run: flutter analyze
+
+      - name: Ensure App Builds
+        run: flutter build apk --debug
