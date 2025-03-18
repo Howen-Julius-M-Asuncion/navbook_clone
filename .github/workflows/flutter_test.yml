@@ -1,16 +1,16 @@
-name: flutter
+name: Test Flutter Dependencies
 
 on:
-  push:
-    branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
 
 jobs:
   build:
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
       - uses: actions/checkout@v4
 
       - name: Flutter action
@@ -18,5 +18,7 @@ jobs:
         with:
           channel: stable
           flutter-version: 3.29.0
-
       - run: flutter --version
+
+      - name: Install referenced packages
+        run: flutter --no-color pub get
