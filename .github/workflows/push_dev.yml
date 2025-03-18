@@ -28,6 +28,4 @@ jobs:
         run: flutter analyze
 
       - name: Ensure App Builds
-        run:  | 
-          flutter build apk --debug
-          flutter run --debug -d web-javascript
+        run:  flutter build apk --debug

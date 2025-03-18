@@ -25,9 +25,7 @@ jobs:
           flutter pub get
 
       - name: Build Release APK
-        run: |
-          flutter build apk --release        
-           flutter run --debug -d all
+        run: flutter build apk --release
 
       - name: Upload Release to GitHub
         uses: softprops/action-gh-release@v2
