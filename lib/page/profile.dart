@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import '/main.dart';
 import '/appcolors.dart';
 
@@ -214,7 +213,7 @@ class _ProfilepageState extends State<Profilepage> {
                               SizedBox(height: 18,),
                               Row(children: [
                                 Text(
-                                  '$_username',
+                                  _username,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 28,
@@ -223,7 +222,7 @@ class _ProfilepageState extends State<Profilepage> {
                               ]),
                               Row(children: [
                                 Text(
-                                  '$_accType',
+                                  _accType,
                                   style: TextStyle(
                                     fontWeight: FontWeight.normal,
                                     fontSize: 16,
@@ -264,7 +263,7 @@ class _ProfilepageState extends State<Profilepage> {
                               CupertinoListTile(
                                 leading: Icon(CupertinoIcons.at_circle, color: AppColors.mainColor,),
                                 title: Text('Edit username'),
-                                subtitle: Text('$_username'),
+                                subtitle: Text(_username),
                                 trailing: CupertinoButton(
                                   onPressed: (){},
                                   child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),
@@ -273,7 +272,7 @@ class _ProfilepageState extends State<Profilepage> {
                               CupertinoListTile(
                                 leading: Icon(CupertinoIcons.mail, color: AppColors.mainColor,),
                                 title: Text('Edit email'),
-                                subtitle: Text('$_email'),
+                                subtitle: Text(_email),
                                 trailing: CupertinoButton(
                                   onPressed: (){},
                                   child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),

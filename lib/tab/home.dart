@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '/page/profile.dart';
-import '/main.dart';
 import '/appcolors.dart';
 
 
@@ -131,12 +130,12 @@ class _HomepageState extends State<Homepage> {
                         ),
                         SizedBox(height: 10),
                         // Row for attachment
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           height: 175,
                           child: FittedBox(
-                            fit: BoxFit.cover, // Ensures the image fills the width, even if it needs to zoom in
-                            clipBehavior: Clip.hardEdge, // Prevents overflow issues
+                            fit: BoxFit.cover,
+                            clipBehavior: Clip.hardEdge,
                             child: Image.asset(
                               'images/rooms/building_default.jpg',
                             ),

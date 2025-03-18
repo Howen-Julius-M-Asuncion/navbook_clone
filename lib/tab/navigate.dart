@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '/page/profile.dart';
-import '/main.dart';
 import '/appcolors.dart';
 
 
@@ -71,7 +70,7 @@ class _NavpageState extends State<Navpage> {
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         // Row for Image
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           height: 200,
                           child: FittedBox(
@@ -116,7 +115,7 @@ class _NavpageState extends State<Navpage> {
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           // Row for Image
-                          Container(
+                          SizedBox(
                             width: double.infinity,
                             height: 200,
                             child: FittedBox(
@@ -161,7 +160,7 @@ class _NavpageState extends State<Navpage> {
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           // Row for Image
-                          Container(
+                          SizedBox(
                             width: double.infinity,
                             height: 200,
                             child: FittedBox(

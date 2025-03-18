@@ -5,6 +5,8 @@ import '/tab/navigate.dart';
 import '/tab/notifications.dart';
 
 class Indexpage extends StatelessWidget {
+  const Indexpage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
