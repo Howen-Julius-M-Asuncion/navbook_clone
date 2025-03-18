@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import '/page/profile.dart';
 import '/main.dart';
 import '/appcolors.dart';
@@ -16,6 +17,7 @@ class _NotifpageState extends State<Notifpage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.lightBackgroundGray,
       navigationBar: CupertinoNavigationBar(
         automaticBackgroundVisibility: false,
         automaticallyImplyLeading: false,
@@ -32,8 +34,8 @@ class _NotifpageState extends State<Notifpage> {
                 );
               },
               child: SizedBox(
-                height: 30,
-                width: 30,
+                height: 35,
+                width: 35,
                 child: ClipOval(
                   child: Image.asset(
                     'images/default_profile.png',
@@ -53,15 +55,60 @@ class _NotifpageState extends State<Notifpage> {
           ],
         ),
       ),
-      child: SafeArea(child:
-      Column(
+      child: SafeArea(child: Column(
         children: [
-          Text('Notifications')
-
-
+          Expanded(
+            child: ListView(
+              children: [
+                CupertinoListSection(
+                  header: Text('Reminders'),
+                  backgroundColor: AppColors.pageColor,
+                  dividerMargin: 0,
+                  children: [
+                    CupertinoListTile(
+                      leading: Icon(CupertinoIcons.bell, color: CupertinoColors.systemGreen,),
+                      trailing: CupertinoButton(child: Icon(CupertinoIcons.ellipsis_vertical,), onPressed: (){}),
+                      title: Text('Dev Ops starts in 1 hour/s'),
+                      subtitle: Text('March 19, Wednesday @ 7:30 AM'),
+                    ),
+                    CupertinoListTile(
+                      leading: Icon(CupertinoIcons.bell_slash, color: CupertinoColors.destructiveRed,),
+                      trailing: CupertinoButton(child: Icon(CupertinoIcons.ellipsis_vertical,), onPressed: (){}),
+                      title: Text('Operating Systems starts in 4 hour/s'),
+                      subtitle: Text('March 19, Wednesday @ 10:30 AM'),
+                    ),
+                  ],
+                ),
+                CupertinoListSection(
+                  header: Text('Notifications'),
+                  backgroundColor: AppColors.pageColor,
+                  dividerMargin: 0,
+                  children: [
+                    CupertinoListTile(
+                      title: Text('Your request has been rejected'),
+                      trailing: CupertinoButton(child: Icon(CupertinoIcons.info_circle_fill,), onPressed: (){}),
+                    ),
+                    CupertinoListTile(
+                      title: Text('Your request has been submitted'),
+                      trailing: CupertinoButton(child: Icon(CupertinoIcons.info_circle_fill,), onPressed: (){}),
+                    ),
+                    CupertinoListTile(
+                      title: Text('A new schedule has been added'),
+                      subtitle: Text('Exams Midterms'),
+                    ),
+                    CupertinoListTile(
+                      title: Text('A new schedule has been added'),subtitle: Text('BSCS-3A'),
+                    ),
+                    CupertinoListTile(
+                      title: Text('You have been enrolled in BSCS-3A'),
+                    ),
+                  ],
+                )
+              ],
+            )
+          ),
         ],
-      )
-      ),
+      )),
     );
   }
 }
