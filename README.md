@@ -13,10 +13,9 @@ This project will utilize the following DevOps features:
 
 ### Page Layouts
 - [x] Home Page
-- [ ] Profile Page
+- [x] Profile Page
 
 ### Home Tabs
-- [ ] Home Tab
-- [ ] Room Navigation/Searching Tab
-- [ ] Schedule Tab
-- [ ] Notifications Tab
+- [x] Home Tab
+- [x] Room Navigation/Searching Tab
+- [x] Notifications Tab
