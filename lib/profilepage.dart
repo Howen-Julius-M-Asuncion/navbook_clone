@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'appcolors.dart';
+import '/main.dart';
+import '/appcolors.dart';
 
 //Placeholders
 String _username = "John Doe";
@@ -22,14 +23,158 @@ class _ProfilepageState extends State<Profilepage> {
       navigationBar: CupertinoNavigationBar(
         automaticBackgroundVisibility: false,
         automaticallyImplyLeading: true,
-        middle: Row(
+        middle: Text(
+          'Profile',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+        trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
-              'Profile',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            CupertinoButton(
+              padding: EdgeInsets.zero,
+              onPressed: () {
+                showCupertinoModalPopup(
+                  context: context,
+                  builder: (context) {
+                    return CupertinoActionSheet(
+                      actions: [
+                        CupertinoActionSheetAction(
+                          onPressed: () {
+                            showCupertinoDialog(
+                              context: context,
+                              builder: (context) {
+                                return CupertinoAlertDialog(
+                                  title: Text('About Us'),
+                                  content: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.all(16.0),
+                                            child: Column(
+                                              children: [
+                                                ClipOval(
+                                                  child: Image.asset(
+                                                    'images/devs/howen.jpg',
+                                                    height: 75,
+                                                    width: 75,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Text('Howen Julius Asuncion'),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.all(16.0),
+                                            child: Column(
+                                              children: [
+                                                ClipOval(
+                                                  child: Image.asset(
+                                                    'images/devs/goco.jpg',
+                                                    height: 75,
+                                                    width: 75,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Text('John Michael Goco'),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.all(16.0),
+                                            child: Column(
+                                              children: [
+                                                ClipOval(
+                                                  child: Image.asset(
+                                                    'images/devs/renz.jpg',
+                                                    height: 75,
+                                                    width: 75,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                                Text('Renz Gabriel Salas'),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  actions: [
+                                    CupertinoButton(
+                                      child: Text('Close', style: TextStyle(color: CupertinoColors.destructiveRed)),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                          child: Text('About Us')
+                        ),
+                        CupertinoActionSheetAction(
+                          onPressed: () {
+                            showCupertinoDialog(
+                              context: context,
+                              builder: (context) {
+                                return CupertinoAlertDialog(
+                                  title: Text('Logout'),
+                                  content: Text('Are you sure?'),
+                                  actions: [
+                                    CupertinoButton(
+                                      child: Text("Yes", style: TextStyle(color: CupertinoColors.destructiveRed)),
+                                      onPressed: () {
+                                        Navigator.pushAndRemoveUntil(
+                                          context,
+                                          CupertinoPageRoute(builder: (context) => MyApp()),
+                                              (route) => false,
+                                        );
+                                      },
+                                    ),
+                                    CupertinoButton(
+                                      child: Text("No"),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
+                                  ],
+                                );
+                              },
+                            );
+                          },
+                          child: Text(
+                            'Logout',
+                            style: TextStyle(
+                              color: CupertinoColors.destructiveRed
+                            ),
+                          )
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: Icon(
+                CupertinoIcons.ellipsis,
+                color: CupertinoColors.darkBackgroundGray,
+                size: 25,
               ),
             ),
           ],
