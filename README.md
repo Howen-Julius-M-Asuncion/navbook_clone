@@ -22,3 +22,4 @@ This project will utilize the following DevOps features:
 
 ## CI/CD
 - [x] Test Development Branch
+- [x] Install Linux Dependencies
