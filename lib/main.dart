@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'appcolors.dart';
-import 'homepage.dart';
+import 'page/index.dart';
 
 void main() {
   runApp(
@@ -46,16 +46,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      resizeToAvoidBottomInset: false,
-      // backgroundColor: CupertinoColors.systemFill.darkColor,
-      child:
+        resizeToAvoidBottomInset: false,
+        // backgroundColor: CupertinoColors.systemFill.darkColor,
+        child:
         Container(
           decoration: BoxDecoration(
             color: AppColors.bgColor,
-              // image: DecorationImage(
-              //   image: AssetImage("images/quora_background.png"),
-              //   fit: BoxFit.cover,
-              // )
+            // image: DecorationImage(
+            //   image: AssetImage("images/quora_background.png"),
+            //   fit: BoxFit.cover,
+            // )
           ),
           child: SafeArea(
             child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -175,7 +175,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   onPressed: (){
                     isLogin(_username.text, _password.text) ?
-                    Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context)=> Homepage()))
+                    Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context)=> Indexpage()))
                         : setState (() {
                       _password.text = "";
                       _username.text = "";
