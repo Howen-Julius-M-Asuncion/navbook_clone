@@ -1,0 +1,35 @@
+name: Release to Github
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+      - uses: actions/checkout@v4
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v2.18.0
+        with:
+          channel: stable
+          flutter-version: 3.29.0
+
+      - name: Install referenced packages
+        run: flutter --no-color pub get
+
+      - name: Ensure App Builds for Release
+        run: flutter build apk --release
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          release_name: "Release v1.0.${{ github.run_number }}"
+          draft: false
+          files: build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
