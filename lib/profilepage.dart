@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'appcolors.dart';
-import 'main.dart';
 
 //Placeholders
 String _username = "John Doe";
 String _accType = "Student";
+String _email = "admin@navbook";
 
 class Profilepage extends StatefulWidget {
   const Profilepage({super.key});
@@ -44,10 +44,10 @@ class _ProfilepageState extends State<Profilepage> {
                   margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   color: Color(0xFFF2F2F2),
                   width: 100,
-                  height: 150,
+                  height: 140,
                   child: Padding(
                     padding: EdgeInsets.all(14),
-                    child: Row(
+                    child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           children: [
@@ -63,11 +63,11 @@ class _ProfilepageState extends State<Profilepage> {
                             ),
                           ],
                         ),
-                        SizedBox(width: 36,),
+                        SizedBox(width: 24,),
                         Column(crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            SizedBox(height: 18,),
                             Row(children: [
-                              SizedBox(height: 45,),
                               Text(
                                 '$_username',
                                 style: TextStyle(
@@ -91,35 +91,77 @@ class _ProfilepageState extends State<Profilepage> {
                     ),
                   ),
                 ),
+                Form(
+                  autovalidateMode: AutovalidateMode.always,
+                  onChanged: () {
+                    Form.maybeOf(primaryFocus!.context!)?.save();
+                  },
+                  child: CupertinoFormSection.insetGrouped(
+                    header: Text('Edit Profile'),
+                    children: [
+                      Column(
+                        children: [
+                          CupertinoListTile(
+                            leading:  SizedBox(
+                              child: ClipOval(
+                                child: Image.asset(
+                                  'images/default_profile.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                            title: Text('Edit Photo'),
+                            trailing: CupertinoButton(
+                              onPressed: (){},
+                              child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),
+                            ),
+                          ),
+                          CupertinoListTile(
+                            leading: Icon(CupertinoIcons.at_circle, color: AppColors.mainColor,),
+                            title: Text('Edit username'),
+                            subtitle: Text('$_username'),
+                            trailing: CupertinoButton(
+                              onPressed: (){},
+                              child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),
+                            ),
+                          ),
+                          CupertinoListTile(
+                            leading: Icon(CupertinoIcons.mail, color: AppColors.mainColor,),
+                            title: Text('Edit email'),
+                            subtitle: Text('$_email'),
+                            trailing: CupertinoButton(
+                              onPressed: (){},
+                              child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),
+                            ),
+                          ),
+                          CupertinoListTile(
+                            leading: Icon(CupertinoIcons.lock_circle, color: AppColors.mainColor,),
+                            title: Text('Edit password'),
+                            trailing: CupertinoButton(
+                              onPressed: (){},
+                              child: Icon(CupertinoIcons.pencil, color: AppColors.accentColor),
+                            ),
+                          ),
+                        ]
+                      )
+                    ],
+                  ),
+                ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   color: Color(0xFFF2F2F2),
                   width: 100,
-                  height: 175,
-                  child: Padding(
-                    padding: EdgeInsets.all(14),
-                    child: Row(
-                      children: [
-                        Column(children: [
-                          Text(
-                            'Edit Profile',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                            ),
-                          ),
-                          Divider(thickness: 100,),
-                          Text(
-                            'Edit Profile',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ])
-                      ],
-                    ),
-                  ),
+                  height: 25,
+                  // child: Padding(
+                  //   padding: EdgeInsets.all(14),
+                  //   child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       CupertinoButton(
+                  //         onPressed: (){},
+                  //         child: Text('data')
+                  //       )
+                  //     ],
+                  //   ),
+                  // ),
                 ),
               ],
             )
