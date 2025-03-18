@@ -21,4 +21,4 @@ This project will utilize the following DevOps features:
 - [x] Notifications Tab
 
 ## CI/CD
-- [ ] Pull Request
+- [x] Test Development Branch
