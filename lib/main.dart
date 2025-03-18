@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
   String loginMsg = "";
 
   isLogin(String username, String password){
-    if(username == "admin" && password == "123"){
+    if(username == "admin@navbook" && password == "123"){
       setState(() {
         _username.text = "";
         _password.text = "";
@@ -58,8 +58,8 @@ class _MyAppState extends State<MyApp> {
               // )
           ),
           child: SafeArea(
-            child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center, children: [
-              // SizedBox(height: 200,),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.start, children: [
+              SizedBox(height: 75,),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Column(
                   children: [
