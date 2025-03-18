@@ -1,3 +1,5 @@
+name: Release to Github
+
 on:
   push:
     branches: [ "master" ]
