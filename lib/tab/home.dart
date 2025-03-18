@@ -17,7 +17,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.lightBackgroundGray,
+      backgroundColor: AppColors.pageColor,
       navigationBar: CupertinoNavigationBar(
         automaticBackgroundVisibility: false,
         automaticallyImplyLeading: false,

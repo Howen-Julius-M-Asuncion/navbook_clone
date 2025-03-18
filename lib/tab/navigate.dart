@@ -17,7 +17,7 @@ class _NavpageState extends State<Navpage> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.lightBackgroundGray,
+      backgroundColor: AppColors.pageColor,
       navigationBar: CupertinoNavigationBar(
         automaticBackgroundVisibility: false,
         automaticallyImplyLeading: false,
@@ -25,7 +25,7 @@ class _NavpageState extends State<Navpage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             CupertinoButton(
-              padding: EdgeInsets.zero, // Remove default padding
+              padding: EdgeInsets.zero,
               onPressed: () {
                 Navigator.of(
                     context,
